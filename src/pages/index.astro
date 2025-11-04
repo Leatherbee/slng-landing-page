@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PhoneMock from "../components/PhoneMock.astro";
+import LegalTabs from "../components/LegalTabs.astro";
+---
+
+<BaseLayout title="SLNG — Landing" description="SLNG iOS App">
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid items-center gap-10 md:grid-cols-2">
+      <div>
+        <h1 class="mt-5 font-display text-5xl font-black tracking-tight">
+          Chat better
+          <span class="block">with SLNG</span>
+        </h1>
+        <p class="mt-5 font-body text-lg text-slate-700">
+          SLNG helps you understand and translate Indonesian slang into clear, standard language and English — all through a lightweight, familiar interface that feels native.
+        </p>
+        <div class="mt-8">
+          <a href="https://testflight.apple.com/join/FjhxBEuA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-slate-900 px-5 py-3 text-white font-semibold">
+            Try now on TestFlight
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <img src="/icon.png" alt="SLNG Icon" class="rounded-lg w-full max-w-[400px] md:max-w-[420px]" />
+      </div>
+    </div>
+
+    <div id="features" class="mt-20">
+      <div class="snap-container md:grid md:grid-cols-2 md:gap-6 justify-center">
+        <div class="snap-item feature-card p-8">
+          <div class="feature-glow"></div>
+          <h3 class="text-xl font-bold"><span class="font-display text-2xl">Slang</span> Detection</h3>
+          <p class="mt-2 text-slate-600">Highlight slang words and instantly suggest standard equivalents.</p>
+        </div>
+        <div class="snap-item feature-card p-8">
+          <div class="feature-glow"></div>
+          <h3 class="text-xl font-bold">Contextual Translation</h3>
+          <p class="mt-2 text-slate-600">Convert your intent to English while staying natural.</p>
+        </div>
+        
+      </div>
+    </div>
+
+    <div id="legal" class="mt-20">
+      <LegalTabs initialTab="about" />
+    </div>
+  </section>
+</BaseLayout>

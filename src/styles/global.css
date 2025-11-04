@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base tweaks */
+:root { color-scheme: light; }
+
+/* Better rendering */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* Tabs: hide inactive panels to avoid FOUC */
+.tab-panel[data-active="false"] { display: none; }
+
+/* Feature cards */
+.feature-card {
+  background: rgba(255, 255, 255, 0.65); /* glass-like */
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+  border: 3px solid #000; /* bold black stroke */
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  width: min(100%, 560px);
+}
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(17, 24, 39, 0.18);
+}
+.feature-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: visibleStroke;
+}
+
+/* Swipe container for mobile */
+.snap-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: .5rem;
+  justify-content: center;
+}
+.snap-item {
+  scroll-snap-align: center;
+  flex: 0 0 85%;
+}
+@media (min-width: 640px) {
+  .snap-item { flex-basis: 70%; }
+}
+@media (min-width: 768px) {
+  .snap-container { display: grid; gap: 1.5rem; overflow: visible; scroll-snap-type: none; justify-content: center; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .snap-item { flex: initial; justify-self: center; }
+}
