@@ -3,7 +3,20 @@
 @tailwind utilities;
 
 /* Base tweaks */
-:root { color-scheme: light; }
+:root { color-scheme: light;   }
+  
+  .team-image-container {
+    transform: rotate(-5deg);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border: 10px solid white;
+    background-color: white;
+  }
+  
+  .team-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
 
 /* Better rendering */
 * { -webkit-tap-highlight-color: transparent; }
