@@ -6,8 +6,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="mx-auto max-w-6xl px-6 py-16">
     <h1 class="font-display text-4xl font-black tracking-tight mb-8">About SLNG</h1>
     <article class="prose prose-slate max-w-none">
-      <h2>Our Mission</h2>
-      <p>To make communication clearer and more enjoyable.</p>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <h2 class="font-display text-md font-black !mt-0">Our Mission</h2>
+          <p class="font-display text-3xl leading-relaxed">To make communication clearer and more enjoyable.</p>
+        </div>
+        <div class="relative team-image-container mx-auto max-w-md shrink-0 md:mx-0">
+          <img src="/presentation.png" alt="SLNG Presentation" class="w-full h-auto team-image" />
+        </div>
+      </div>
 
       <h2>Language is more than words</h2>
       <p>
@@ -59,8 +66,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         SLNG is growing, just like language itself. We’re here to make sure no slang, abbreviation,
         or trend ever leaves you behind. Start typing and discover how Indonesia speaks today.
       </p>
-
-      <p>Great writing gets work done</p>
     </article>
   </section>
 </BaseLayout>
